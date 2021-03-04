@@ -20,7 +20,7 @@ var db, _ = gorm.Open("mysql", "root:root@/todolist?charset=utf8&parseTime=True&
 
 // TodoItemModel is the structure for how a todo list item should look
 type TodoItemModel struct {
-	Id          int `gorm:"primary_key"`
+	ID          int `gorm:"primary_key"`
 	Description string
 	Completed   bool
 }
@@ -49,7 +49,7 @@ func UpdateItem(w http.ResponseWriter, r *http.Request) {
 		io.WriteString(w, `{"updated": false, "error": "Record Not Found"}`)
 	} else {
 		completed, _ := strconv.ParseBool(r.FormValue("completed"))
-		log.WithFields(log.Fields{"Id": id, "Completed": completed}).Info("Updating todo item")
+		log.WithFields(log.Fields{"ID": id, "Completed": completed}).Info("Updating todo item")
 		todo := &TodoItemModel{}
 		db.First(&todo, id)
 		todo.Completed = completed
@@ -69,7 +69,7 @@ func DeleteItem(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
 		io.WriteString(w, `{"deleted": false, "error": "Record Not Found"}`)
 	} else {
-		log.WithFields(log.Fields{"Id": id}).Info("Deleting todo item")
+		log.WithFields(log.Fields{"ID": id}).Info("Deleting todo item")
 		todo := &TodoItemModel{}
 		db.First(&todo, id)
 		db.Delete(&todo)
@@ -79,9 +79,9 @@ func DeleteItem(w http.ResponseWriter, r *http.Request) {
 }
 
 // GetItemByID is a function that grabs a todo item from the database via ID.
-func GetItemByID(Id int) bool {
+func GetItemByID(ID int) bool {
 	todo := &TodoItemModel{}
-	result := db.First(&todo, Id)
+	result := db.First(&todo, ID)
 	if result.Error != nil {
 		log.Warn("todo item not found in database")
 		return false
