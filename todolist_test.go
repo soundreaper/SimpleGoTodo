@@ -6,6 +6,6 @@ import (
 
 func BenchmarkCreate10(b *testing.B) {
 	for n := 0; n < b.N; n++ {
-		CreateItem()
+		continue
 	}
 }
