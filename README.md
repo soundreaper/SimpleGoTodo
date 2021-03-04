@@ -1,6 +1,6 @@
 # Simple Go Todo List
 
-### Proposal
+## Proposal
 
 Making a simple backend using Golang, MySQL, GORM, Gorilla/MUX, Logrus for a todo list
 web application. The frontend source code is from https://github.com/themaxsandelin/todo and
@@ -23,9 +23,16 @@ Build the executable:
 go build
 
 ```
+
 Run the executable:
 ```bash
 
 ./todolist
 
 ```
+
+Open index.html from project directory in browser
+
+## Screenshot
+
+![Screenshot](/resources/img/screenshot.png)
