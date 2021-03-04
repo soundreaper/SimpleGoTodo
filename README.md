@@ -9,7 +9,7 @@ to localhost:8000.
 
 ## Install Instructions
 
-Clone this repository
+Clone this repository:
 
 ```bash
 
@@ -17,13 +17,13 @@ git clone git@github.com:soundreaper/SimpleGoTodo.git
 
 ```
   
-Build the executable
+Build the executable:
  ```bash
 
 go build
 
 ```
-Run the executable
+Run the executable:
 ```bash
 
 ./todolist
