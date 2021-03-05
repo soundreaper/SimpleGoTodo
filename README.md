@@ -1,5 +1,7 @@
 # Simple Go Todo List
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/soundreaper/SimpleGoTodo)](https://goreportcard.com/report/github.com/soundreaper/SimpleGoTodo)
+
 ## Proposal
 
 Making a simple backend using Golang, MySQL, GORM, Gorilla/MUX, Logrus for a todo list
